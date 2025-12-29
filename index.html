@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduarda Gasti | Design Estratégico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Geist:wght@300;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0A0A0A;
+            --accent: #A1A1AA;
+        }
+        body { 
+            font-family: 'Geist', sans-serif; 
+            cursor: none; 
+            overflow-x: hidden; 
+            scroll-behavior: smooth;
+            background-color: #FFFFFF;
+            color: var(--primary);
+        }
+        p, .font-inter { font-family: 'Inter', sans-serif; }
+
+        .custom-cursor { 
+            position: fixed; top: 0; left: 0; width: 10px; height: 10px; 
+            border-radius: 50%; pointer-events: none; z-index: 9999; 
+            background-color: var(--primary); transition: transform 0.1s ease-out, width 0.3s, height 0.3s; 
+        }
+        
+        .grain-overlay { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background-image: url("https://grainy-gradients.vercel.app/noise.svg"); 
+            opacity: 0.03; pointer-events: none; z-index: 50; 
+        }
+
+        .hero-title { 
+            font-size: clamp(3.5rem, 11vw, 9rem); 
+            line-height: 0.85; 
+            letter-spacing: -0.05em; 
+            font-weight: 800;
+        }
+
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .marquee-content { animation: marquee 40s linear infinite; }
+
+        /* Estilo para Transição de Depoimentos */
+        .testimonial-slide {
+            display: none;
+            animation: fadeIn 0.8s ease forwards;
+        }
+        .testimonial-slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div id="cursor" class="custom-cursor md:block hidden"></div>
+    <div class="grain-overlay"></div>
+
+    <!-- NAVEGAÇÃO TOTALMENTE TRANSPARENTE -->
+    <nav class="fixed top-0 w-full z-[110] px-8 py-8 md:px-16 flex justify-between items-center bg-transparent">
+        <div class="text-black text-xl font-extrabold tracking-tighter uppercase">EDUARDA GASTI</div>
+        <div class="flex gap-8">
+            <a href="#sobre" class="text-[10px] font-bold uppercase tracking-widest hover:text-zinc-400 transition-colors">Sobre</a>
+            <a href="#servicos" class="text-[10px] font-bold uppercase tracking-widest hover:text-zinc-400 transition-colors">Serviços</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex flex-col justify-center px-8 md:px-16 pt-32 pb-20">
+        <div class="max-w-7xl mx-auto w-full">
+            <h1 class="hero-title mb-16">DESIGN <br> <span class="text-zinc-300 italic">ESTRATÉGICO.</span></h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mt-12">
+                <div class="space-y-6">
+                    <p class="text-lg md:text-2xl text-zinc-800 leading-snug font-medium max-w-xl">
+                        Design estratégico que transforma sua marca, gera desejo e faz seu negócio se destacar.
+                    </p>
+                </div>
+                <div class="flex md:justify-end items-center h-full">
+                    <a href="https://wa.me/5511988039194?text=Oi,%20Eduarda.%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20projeto." target="_blank" class="group flex items-center gap-4 text-xs uppercase tracking-[0.3em] font-bold">
+                        Iniciar meu projeto <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="py-12 border-y border-zinc-100 overflow-hidden flex whitespace-nowrap bg-black text-white">
+        <div class="marquee-content text-[5vw] font-bold tracking-tighter uppercase leading-none opacity-30">
+            &nbsp;Identidade Visual • Criação de Site • Landing page • Social Media • IA Design • Branding • Editorial •&nbsp;
+        </div>
+    </div>
+
+    <!-- SOBRE MIM -->
+    <section id="sobre" class="py-40 px-8 md:px-24 max-w-6xl mx-auto">
+        <h2 class="text-[10px] uppercase tracking-[0.5em] text-zinc-400 mb-16 font-bold">Sobre mim</h2>
+        <div class="space-y-8">
+            <p class="text-4xl md:text-6xl font-bold tracking-tight text-zinc-900">Oi, eu sou a Eduarda</p>
+            <p class="text-xl md:text-3xl font-light leading-relaxed text-zinc-700 max-w-4xl">
+                Sempre fui apaixonada por design com personalidade, inovação e criatividade. Gosto de criar experiências visuais memoráveis, que contam histórias e fazem as pessoas sentirem algo. Acredito que uma boa marca tem uma aparência que comunica, posiciona e cria conexão. Por isso, meu trabalho une estratégia, criatividade e atenção aos detalhes.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-20 border-t border-zinc-100 items-start mt-24">
+            <div>
+                <p class="text-5xl font-extrabold tracking-tighter">+100</p>
+                <p class="text-[10px] uppercase tracking-widest text-zinc-400 mt-4 font-bold">Projetos entregues pelo mundo</p>
+            </div>
+            <div>
+                <p class="text-5xl font-extrabold tracking-tighter">+06</p>
+                <p class="text-[10px] uppercase tracking-widest text-zinc-400 mt-4 font-bold">Anos de experiência</p>
+            </div>
+            <div class="flex items-center md:justify-end">
+                <a href="https://wa.me/5511988039194?text=Oi,%20Eduarda.%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20projeto." target="_blank" class="bg-black text-white px-10 py-6 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-all flex items-center gap-3">
+                    Solicitar Orçamento <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-32 px-6 md:px-12 bg-black text-white rounded-[40px] md:rounded-[100px] mx-2 md:mx-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl md:text-8xl font-bold tracking-tighter mb-24">Serviços<span class="text-zinc-700">.</span></h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="services-grid">
+                <!-- Cards Gerados via JS -->
+            </div>
+            
+            <!-- Projeto Especial -->
+            <div onclick="window.open('https://wa.me/5511988039194?text=Oi,%20Eduarda.%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20projeto.', '_blank')" class="mt-4 bg-zinc-900 border border-white/5 p-12 rounded-[40px] flex flex-col md:flex-row justify-between items-center group cursor-pointer hover:bg-zinc-800 transition-colors">
+                <div class="text-center md:text-left">
+                    <h3 class="text-3xl font-bold tracking-tight mb-2">Projeto Sob Medida</h3>
+                    <p class="text-zinc-500 text-sm">Precisa de algo exclusivo? Vamos desenvolver uma solução personalizada para sua marca.</p>
+                </div>
+                <div class="mt-8 md:mt-0 w-16 h-16 rounded-full bg-white text-black flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEEDBACKS (Animação de Transição) -->
+    <section id="feedbacks" class="py-40 px-8 md:px-16 max-w-5xl mx-auto text-center">
+        <h2 class="text-[10px] uppercase tracking-[0.5em] text-zinc-400 mb-20 font-bold">Feedbacks</h2>
+        
+        <div class="relative h-64 flex items-center justify-center">
+            <div class="testimonial-slide active w-full">
+                <p class="text-2xl md:text-4xl font-medium text-zinc-800 leading-relaxed italic">"Eu tinha uma ideia e fiquei com receio da Eduarda não entender, mas ela não apenas entendeu como fez mil vezes melhor."</p>
+                <div class="mt-8">
+                    <h4 class="font-bold text-sm uppercase tracking-widest text-black">Ana Paula M.</h4>
+                    <p class="text-[10px] text-zinc-400 uppercase tracking-widest mt-1">Arquiteta</p>
+                </div>
+            </div>
+            <div class="testimonial-slide w-full">
+                <p class="text-2xl md:text-4xl font-medium text-zinc-800 leading-relaxed italic">"Trabalho impecável. A identidade visual e os posts ficaram exatamente como eu imaginei, com muito luxo e minimalismo."</p>
+                <div class="mt-8">
+                    <h4 class="font-bold text-sm uppercase tracking-widest text-black">Lucas Ribeiro</h4>
+                    <p class="text-[10px] text-zinc-400 uppercase tracking-widest mt-1">Psicólogo</p>
+                </div>
+            </div>
+            <div class="testimonial-slide w-full">
+                <p class="text-2xl md:text-4xl font-medium text-zinc-800 leading-relaxed italic">"Amei desde o atendimento até o resultado final. Qualidade absurda e atenção aos detalhes que nunca vi antes."</p>
+                <div class="mt-8">
+                    <h4 class="font-bold text-sm uppercase tracking-widest text-black">Mariana G.</h4>
+                    <p class="text-[10px] text-zinc-400 uppercase tracking-widest mt-1">CEO Beauty Brand</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center gap-2 mt-12">
+            <button onclick="prevTestimonial()" class="p-2 border border-zinc-200 rounded-full hover:bg-zinc-50"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+            <button onclick="nextTestimonial()" class="p-2 border border-zinc-200 rounded-full hover:bg-zinc-50"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+        </div>
+    </section>
+
+    <!-- FINAL CTA (Sem ícone no botão) -->
+    <section class="py-60 px-8 text-center bg-zinc-50 rounded-[40px] md:rounded-[100px] mx-2 md:mx-6 mb-10">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-5xl md:text-[6vw] font-bold tracking-tighter leading-tight mb-20 uppercase">PRONTO PARA O <br> <span class="italic text-zinc-300">PRIMEIRO PASSO?</span></h2>
+            <a href="https://wa.me/5511988039194?text=Oi,%20Eduarda.%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20projeto." target="_blank" class="inline-flex items-center bg-black text-white px-16 py-8 rounded-full text-xl font-bold hover:scale-105 transition-transform group shadow-2xl">
+                Solicitar Orçamento
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-24 px-8 md:px-16">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
+            <div class="space-y-12">
+                <h3 class="text-5xl md:text-7xl font-extrabold tracking-tighter uppercase">EDUARDA GASTI</h3>
+                <div class="flex gap-10 text-[10px] uppercase tracking-[0.4em] font-bold">
+                    <a href="https://www.instagram.com/eduardagasti" target="_blank" class="hover:text-zinc-500 transition-colors">Instagram</a>
+                    <a href="http://tiktok.com/@mariadgros" target="_blank" class="hover:text-zinc-500 transition-colors">TikTok</a>
+                </div>
+            </div>
+            <p class="text-[10px] text-zinc-700 uppercase tracking-[0.3em] font-bold italic">© 2025 EDUARDA GASTI • HIGH END DESIGN</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/5511988039194?text=Oi,%20Eduarda.%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20projeto." target="_blank" class="fixed bottom-10 right-10 z-[110] bg-[#25D366] text-white p-6 rounded-full shadow-2xl hover:scale-110 transition-transform">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <script>
+        lucide.createIcons();
+
+        // Cursor Personalizado
+        const cursor = document.getElementById('cursor');
+        window.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate3d(${e.clientX - 5}px, ${e.clientY - 5}px, 0)`;
+        });
+
+        // Hover effects
+        document.querySelectorAll('a, button, .group, [onclick]').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = cursor.style.transform + ' scale(4)';
+                cursor.style.backgroundColor = 'rgba(0,0,0,0.05)';
+                cursor.style.border = '0.5px solid black';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = cursor.style.transform.replace(' scale(4)', '');
+                cursor.style.backgroundColor = 'black';
+                cursor.style.border = 'none';
+            });
+        });
+
+        // Grid de Serviços
+        const services = [
+            "Identidade Visual",
+            "Criação de Site",
+            "Landing Page",
+            "Design para Redes Sociais",
+            "Papelaria Personalizada",
+            "Soluções com I.A"
+        ];
+
+        const grid = document.getElementById('services-grid');
+        services.forEach(s => {
+            const card = document.createElement('div');
+            card.className = "bg-zinc-900/50 p-8 rounded-[30px] border border-white/5 flex flex-col justify-center items-center text-center group hover:bg-white hover:text-black transition-all cursor-pointer h-40";
+            card.innerHTML = `<h3 class="text-lg font-bold tracking-tight uppercase tracking-wider">${s}</h3>`;
+            card.onclick = () => {
+                window.open("https://wa.me/5511988039194?text=Oi,%20Eduarda.%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20projeto.", "_blank");
+            };
+            grid.appendChild(card);
+        });
+
+        // Depoimentos
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        function showSlide(index) {
+            slides.forEach((s, i) => {
+                s.classList.remove('active');
+                if (i === index) s.classList.add('active');
+            });
+        }
+        function nextTestimonial() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        function prevTestimonial() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+        setInterval(nextTestimonial, 5000);
+    </script>
+</body>
+</html>
